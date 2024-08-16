@@ -106,15 +106,15 @@ To get started with installing Keycloak, first ensure you have administrative ac
 * Debian OS Installed
 * Download Apache Guacamole server source code
   ```sh
-  wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/source/guacamole-server-1.5.5.tar.gz?action=download
+  wget https://guacamole.apache.org/releases/1.5.5/...
   ```
 * Download LDAP Extension
   ```sh
-  wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/binary/guacamole-auth-ldap-1.5.5.tar.gz?action=download
+  wget https://guacamole.apache.org/releases/1.5.5/...
   ```
 * Download the SSO Extensions
 ```sh
-wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/binary/guacamole-auth-sso-1.5.5.tar.gz?action=download
+wget https://guacamole.apache.org/releases/1.5.5/...
 ```
 ### Installation
 
