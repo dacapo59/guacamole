@@ -103,68 +103,76 @@ To get started with installing Keycloak, first ensure you have administrative ac
 
 ### Prerequisites
 
-* Debian OS
+* Debian OS Installed
 * Download Apache Guacamole server source code
   ```sh
   wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/source/guacamole-server-1.5.5.tar.gz?action=download
   ```
+* Download LDAP Extension
+  ```sh
+  wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/binary/guacamole-auth-ldap-1.5.5.tar.gz?action=download
+  ```
+* Download the SSO Extensions
+```sh
+wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/binary/guacamole-auth-sso-1.5.5.tar.gz?action=download
+```
 ### Installation
 
 1. Download and install Cairo (Required dependency)
    ```sh
-     sudo apt install libcairo2-dev
+     sudo apt install libcairo2-dev -y
    ```
 2. Download and install libjpeg-turbo (Required dependency)
    ```sh
-     sudo apt install libjpeg62-turbo-dev
+     sudo apt install libjpeg62-turbo-dev -y
    ```
 3. Download and install libpng (Required dependency)
    ```sh
-     sudo apt install libpng-dev
+     sudo apt install libpng-dev -y
    ```
 4. Download and install libtool (Required dependency)
    ```sh
-     sudo apt install libtool-bin
+     sudo apt install libtool-bin -y
    ```
 5. Download and install libuuid (Required dependency)
    ```sh
-     sudo apt install uuid-dev
+     sudo apt install uuid-dev -y
    ```
 6. Download and install FFmpeg (Optional but necessary dependency)
    ```sh
-     sudo apt install libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev
+     sudo apt install libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev -y
    ```
 7. Download and install FreeRDP (Optional but necessary dependency)
    ```sh
-     sudo apt install freerdp2-dev
+     sudo apt install freerdp2-dev -y
    ```
 8. Download and install Pango (Optional but necessary dependency)
    ```sh
-     sudo apt install libpango1.0-dev
+     sudo apt install libpango1.0-dev -y
    ```
 9. Download and install libssh2 (Optional but necessary dependency)
    ```sh
-     sudo apt install libssh2-1-dev
+     sudo apt install libssh2-1-dev -y
    ```
 10. Download and install libVNCServer (Optional but necessary dependency)
    ```sh
-     sudo apt install libvncserver-dev
+     sudo apt install libvncserver-dev -y
    ```
 11. Download and install PulseAudio (Optional but necessary dependency)
    ```sh
-     sudo apt install libpulse-dev
+     sudo apt install libpulse-dev -y
    ```
 12. Download and install OpenSSL (Optional but necessary dependency)
    ```sh
-     sudo apt install libssl-dev
+     sudo apt install libssl-dev -y
    ```
 13. Download and install libvorbis (Optional but necessary dependency)
    ```sh
-     sudo apt install libvorbis-dev
+     sudo apt install libvorbis-dev -y
    ```
 14. Download and install libwebp (Optional but necessary dependency)
    ```sh
-     sudo apt install libwebp-dev
+     sudo apt install libwebp-dev -y
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
