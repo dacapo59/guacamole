@@ -148,9 +148,9 @@ wget https://guacamole.apache.org/releases/1.5.5/...
   ```sh
     sudo apt install maven -y
   ```
-6. Download and install build-essential (Required dependency)
+6. Download and install Java 16 (Required dependency)
   ```sh
-    sudo apt install  -y
+    wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz
   ```
 6. Download and install FFmpeg (Optional but necessary dependency)
    ```sh
