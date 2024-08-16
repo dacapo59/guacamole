@@ -30,22 +30,22 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://www.keycloak.org/documentation">
-    <img src="https://www.keycloak.org/resources/images/logo.svg" alt="Logo" width="913" height="536" >
+  <a href="https://guacamole.apache.org/doc/1.5.5/gug/">
+    <img src="https://www.bujarra.com/wp-content/uploads/2020/11/Apache-Guacamole-00.jpg" alt="Logo" width="913" height="536" >
   </a>
 
-<h3 align="center">Keycloak</h3>
+<h3 align="center">Apache Guacamole</h3>
 
   <p align="center">
     <br />
     <a href="https://guacamole.apache.org/doc/1.5.5/gug/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/dacapo59/keycloak">View Demo</a>
+    <a href="https://github.com/dacapo59/guacamole">View Demo</a>
     ·
-    <a href="https://github.com/dacapo59/keycloak/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/dacapo59/guacamole/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/dacapo59/keycloak/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/dacapo59/guacamole/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -103,105 +103,70 @@ To get started with installing Keycloak, first ensure you have administrative ac
 
 ### Prerequisites
 
-* Download OpenJDK (Required dependency)
+* Debian OS
+* Download Apache Guacamole server source code
   ```sh
-  wget https://download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb341ae18aca4/8/GPL/openjdk-22.0.1_linux-x64_bin.tar.gz
+  wget https://apache.org/dyn/closer.lua/guacamole/1.5.5/source/guacamole-server-1.5.5.tar.gz?action=download
   ```
-* Keycloak
-  ```sh
-  wget https://github.com/keycloak/keycloak/releases/download/25.0.2/keycloak-25.0.2.tar.gz
-   ```
-
 ### Installation
 
-1. Download and install OpenJDK 22.0.1
+1. Download and install Cairo (Required dependency)
    ```sh
-   cd /opt
-   wget https://download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb341ae18aca4/8/GPL/openjdk-22.0.1_linux-x64_bin.tar.gz
-   tar -zxvf openjdk-22.0.1_linux-x64_bin.tar.gz
-   rm /opt/openjdk-22.0.1_linux-x64_bin.tar.gz
-2. Add the JAVA path to your path
-   ```sh
-   ## Custom
-   nano ~/.bashrc
+     sudo apt install libcairo2-dev
    ```
-   Paste the following to the bottom of .bashrc:
+2. Download and install libjpeg-turbo (Required dependency)
    ```sh
-   export JAVA_HOME="/opt/jdk-22.0.1"
-   export PATH="$JAVA_HOME/bin:$PATH"
+     sudo apt install libjpeg62-turbo-dev
    ```
-   Update the source for ~/.bashrc for the current shell session
+3. Download and install libpng (Required dependency)
    ```sh
-   source ~/.bashrc
+     sudo apt install libpng-dev
    ```
-   Check JAVA version
+4. Download and install libtool (Required dependency)
    ```sh
-   java --version
+     sudo apt install libtool-bin
    ```
-4. Install Keycloak
+5. Download and install libuuid (Required dependency)
    ```sh
-   cd /opt
-   wget wget https://github.com/keycloak/keycloak/releases/download/25.0.2/keycloak-25.0.2.tar.gz
-   tar -zxvf keycloak-25.0.2.tar.gz
-   rm /opt/keycloak-25.0.2.tar.gz
+     sudo apt install uuid-dev
    ```
-5. Create a database user in Postgres.
-6. Create a private and public certificate key pair
+6. Download and install FFmpeg (Optional but necessary dependency)
    ```sh
-   cd /opt/keycloak-25.0.2/conf
-   openssl req -x509 -nodes -days 1825 -newkey rsa:2048 -keyout kc.key.pem -out kdc.crt.pem
+     sudo apt install libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev
    ```
-7. Setup Environment
+7. Download and install FreeRDP (Optional but necessary dependency)
    ```sh
-   nano /opt/keycloak-25.0.2/conf/keycloak.conf
+     sudo apt install freerdp2-dev
    ```
-   Paste the contents of keycloak.conf.template into the active keycloak.conf file. I used all entries that are commented out with two pound symbols (##).
-8. Create a systemd service file
+8. Download and install Pango (Optional but necessary dependency)
    ```sh
-   nano /etc/systemd/system/keycloak.service
+     sudo apt install libpango1.0-dev
    ```
-   Paste the contents of the .service.template file into the active .service file. Make sure program paths and versions are adjusted as needed.
-   Enable Keycloak at startup
+9. Download and install libssh2 (Optional but necessary dependency)
    ```sh
-   systemctl enable keycloak.service
+     sudo apt install libssh2-1-dev
    ```
-   Reload daemon
+10. Download and install libVNCServer (Optional but necessary dependency)
    ```sh
-   systemctl daemon-reload
+     sudo apt install libvncserver-dev
    ```
-9. Create a user for Keycloak and give it permissions to the Keycloak program directory
+11. Download and install PulseAudio (Optional but necessary dependency)
    ```sh
-   adduser keycloak
-   chown -R keycloak:keycloak /opt/keycloak-25.0.2
+     sudo apt install libpulse-dev
    ```
-10. Add first admin user variables to your PATH for the Keycloak program
-    ```sh
-    nano ~/.bashrc
-    ```
-    Paste these contents to the bottom of the .bashrc file
-    ```sh
-    export KC_ADMIN=admin
-    export KC_ADMIN_PASSWORD=password
-    ```
-    Update the source for ~/.bashrc for the current shell session
+12. Download and install OpenSSL (Optional but necessary dependency)
    ```sh
-   source ~/.bashrc
+     sudo apt install libssl-dev
    ```
-11. Start Keycloak for the first time with initial admin username and password added to the keycloak.conf file
-    ```sh
-    nano /opt/keycloak-25.0.2/conf/keycloak.conf
-    ```
-    Paste in the following contents
-    ```sh
-    # initial admin username and password
-    KEYCLOAK_ADMIN=user
-    KEYCLOAK_ADMIN_PASSWORD=password
-    ```
-    ***Remove this entry after first run of Keycloak***
-13. Systemd can be used with subsequent starts
-    ```sh
-    systemctl start keycloak.service
-    ```
+13. Download and install libvorbis (Optional but necessary dependency)
+   ```sh
+     sudo apt install libvorbis-dev
+   ```
+14. Download and install libwebp (Optional but necessary dependency)
+   ```sh
+     sudo apt install libwebp-dev
+   ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
