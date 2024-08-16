@@ -174,7 +174,7 @@ To get started with installing Keycloak, first ensure you have administrative ac
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-_For more examples, please refer to the [Documentation](https://www.keycloak.org/documentation)_
+_For more examples, please refer to the [Documentation](https://guacamole.apache.org/doc/1.5.5/gug/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -188,7 +188,7 @@ _For more examples, please refer to the [Documentation](https://www.keycloak.org
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/dacapo59/Keycloak/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/dacapo59/guacamole/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
@@ -227,7 +227,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- Your Name - [@twitter_handle](https://twitter.com/twitter_handle) -brett@brettjoiner.me -->
 Brett Joiner - [Email](https://twitter.com/twitter_handle) - brett@brettjoiner.me
 
-Project Link: [https://github.com/dacapo59/Keycloak](https://github.com/dacapo59/Keycloak)
+Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo59/guacamole)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -275,7 +275,7 @@ Project Link: [https://github.com/dacapo59/Keycloak](https://github.com/dacapo59
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[keycloak-url]: https://www.keycloak.org/downloads
+[guacamole-url]: https://guacamole.apache.org/releases/1.5.5/
 [keycloak-image]: https://www.keycloak.org/resources/images/icon.svg
 [maxminddb-url]: https://www.maxmind.com/en/geoip-databases
 [maxminddb-image]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ042SY-Km30dCaPnBcuIw-5u2mZjNqX6NHQ&s
