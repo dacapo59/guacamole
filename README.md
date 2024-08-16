@@ -116,6 +116,8 @@ To get started with installing Keycloak, first ensure you have administrative ac
 ```sh
 wget https://guacamole.apache.org/releases/1.5.5/...
 ```
+* Download and install Tomcat
+  https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10
 ### Installation
 
 1. Download and install Cairo (Required dependency)
@@ -140,7 +142,15 @@ wget https://guacamole.apache.org/releases/1.5.5/...
    ```
 6. Download and install build-essential (Required dependency)
   ```sh
-    sudo apt install build-essential
+    sudo apt install build-essential -y
+  ```
+6. Download and install build-essential (Required dependency)
+  ```sh
+    sudo apt install maven -y
+  ```
+6. Download and install build-essential (Required dependency)
+  ```sh
+    sudo apt install  -y
   ```
 6. Download and install FFmpeg (Optional but necessary dependency)
    ```sh
