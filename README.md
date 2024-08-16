@@ -138,6 +138,10 @@ wget https://guacamole.apache.org/releases/1.5.5/...
    ```sh
      sudo apt install uuid-dev -y
    ```
+6. Download and install build-essential (Required dependency)
+  ```sh
+    sudo apt install build-essential
+  ```
 6. Download and install FFmpeg (Optional but necessary dependency)
    ```sh
      sudo apt install libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev -y
