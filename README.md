@@ -38,7 +38,7 @@
 
   <p align="center">
     <br />
-    <a href="https://www.keycloak.org/documentation"><strong>Explore the docs »</strong></a>
+    <a href="https://guacamole.apache.org/doc/1.5.5/gug/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/dacapo59/keycloak">View Demo</a>
