@@ -308,8 +308,45 @@ cd /opt/guacamole-client-1.5.5/
    GRANT SELECT,USAGE ON ALL SEQUENCES IN SCHEMA public TO guacamole_user;
    \q
    ```
+9. Configure Guacamole to use the database in /etc/guacamole/guacamole.properites
+10. Restart the Tomcat service
+   ```sh
+   systemctl restart tomcat
+   ```
+11. Create an admin user in LDAP, login as guacadmin and give the new admin user all admin permissions.
+12. Login as the new admin and disable login for guacadmin.
+#### Setup Reverse Proxy
+1. Add the line, URIEncoding="UTF-8", to the connector configuration of Tomcat
+   ```sh
+   nano /opt/tomcat/conf/server.xml
+   ```
+   Find the following configuration and add the line above:
+   ```sh
+       <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               URIEncoding="UTF-8"
+               />
+   ```
+2. Setup Remote IP Valve in Tomcat.
+   ```sh
+   nano /opt/tomcat/conf/server.xml
+   ```
+   Setup the following valve
+   ```sh
+   <Valve className="org.apache.catalina.valves.RemoteIpValve"
+               internalProxies="127.0.0.1"
+               remoteIpHeader="x-forwarded-for"
+               remoteIpProxiesHeader="x-forwarded-by"
+               protocolHeader="x-forwarded-proto" />
+   ```
+3. Setup the reverse proxy with the congiguration file in this repository
+4. Get the Guacamole server a public certificate
 
-
+#### Setup OIDC
+1. 
+   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
