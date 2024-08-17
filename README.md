@@ -106,19 +106,48 @@ To get started with installing Keycloak, first ensure you have administrative ac
 * Debian OS Installed
 * Download Apache Guacamole server source code
   ```sh
+  cd /opt
   wget https://guacamole.apache.org/releases/1.5.5/...
+  tar -zxvf filename
+  ```
+  * Download Apache Guacamole client source code
+  ```sh
+  cd /opt
+  wget https://guacamole.apache.org/releases/1.5.5/...
+  tar -zxvf filename
   ```
 * Download LDAP Extension
   ```sh
+  cd /opt
   wget https://guacamole.apache.org/releases/1.5.5/...
+  tar -zxvf filename
   ```
 * Download the SSO Extensions
 ```sh
+cd /opt
 wget https://guacamole.apache.org/releases/1.5.5/...
+tar -zxvf filename
 ```
 * Download and install Tomcat
   https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10
-### Installation
+  
+* Download and extract Java 16 (Java 17 led to errors)
+```sh
+cd /opt
+wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz
+tar -zxvf filename
+```
+* Delete all extracted files
+```sh
+rm *.gz
+```
+### Server Prep
+1. Statically assign NIC
+2. Comment out all ipv6 entries in /etc/hosts (rdp won't work without this step)
+3. Add JAVA_HOME path to your shell instance
+   ```sh
+   export JAVA_HOME=/opt/jdk-16.0.2
+#### Installation
 
 1. Download and install Cairo (Required dependency)
    ```sh
@@ -144,50 +173,48 @@ wget https://guacamole.apache.org/releases/1.5.5/...
   ```sh
     sudo apt install build-essential -y
   ```
-6. Download and install build-essential (Required dependency)
+7. Download and install build-essential (Required dependency)
   ```sh
     sudo apt install maven -y
   ```
-6. Download and install Java 16 (Required dependency)
-  ```sh
-    wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz
-  ```
-6. Download and install FFmpeg (Optional but necessary dependency)
+
+8. Download and install FFmpeg (Optional used for recording sessions)
    ```sh
      sudo apt install libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev -y
    ```
-7. Download and install FreeRDP (Optional but necessary dependency)
+9. Download and install FreeRDP (Optional but necessary dependency)
    ```sh
      sudo apt install freerdp2-dev -y
    ```
-8. Download and install Pango (Optional but necessary dependency)
+10. Download and install Pango (Optional but necessary dependency)
    ```sh
      sudo apt install libpango1.0-dev -y
    ```
-9. Download and install libssh2 (Optional but necessary dependency)
+11. Download and install libssh2 (Optional but necessary dependency)
    ```sh
      sudo apt install libssh2-1-dev -y
    ```
-10. Download and install libVNCServer (Optional but necessary dependency)
+12. Download and install libVNCServer (Optional but necessary dependency)
    ```sh
      sudo apt install libvncserver-dev -y
    ```
-11. Download and install PulseAudio (Optional but necessary dependency)
+13. Download and install PulseAudio (Optional but necessary dependency)
    ```sh
      sudo apt install libpulse-dev -y
    ```
-12. Download and install OpenSSL (Optional but necessary dependency)
+14. Download and install OpenSSL (Optional but necessary dependency)
    ```sh
      sudo apt install libssl-dev -y
    ```
-13. Download and install libvorbis (Optional but necessary dependency)
+15. Download and install libvorbis (Optional but necessary dependency)
    ```sh
      sudo apt install libvorbis-dev -y
    ```
-14. Download and install libwebp (Optional but necessary dependency)
+16. Download and install libwebp (Optional but necessary dependency)
    ```sh
      sudo apt install libwebp-dev -y
    ```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
