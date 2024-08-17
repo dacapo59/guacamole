@@ -359,6 +359,10 @@ cd /opt/guacamole-client-1.5.5/
    - Navigate to Authentication, select "ID Tokens" under Implicit grant and hybrid flows.
    - To get all necessary URLs for the next step, Navigate to Overview > Endpoints. Copy and paste the OpenID Connect metadata document URL into your browser. When you navigate to it, all needed information will be there - just ctrl + F.
 4. Update the /etc/guacamole/guacamole.properties configuration with the values in the file in this repository.
+5. Restart the Tomcat service
+   ```sh
+   systemctl restart tomcat
+   ```
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
