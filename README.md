@@ -254,11 +254,62 @@ cd /opt/guacamole-client-1.5.5/
    touch logback.xml
    touch user-mapping.xml
    ```
+3. Fill in the contents of the .xml files above with that of the files in this repository.
 4. Restart Applicable Services
    ```sh
    systemctl restart guacd
    systemctl restart tomcat
    ```
+5. Test RDP through Guacamole @ http://serverip:8080/guacamole
+
+#### Setup LDAP Authentication
+1. Copy the LDAP authentication extension to /etc/guacamole/extensions
+   ```sh
+   cp /opt/guacamole-auth-ldap-1.5.5/guacamole-1.5.5.war /etc/guacamole/extensions
+   ``` 
+2. Create a service account in the LDAP server. The service account only needs to have "Domain Users" permissions.
+3. Update /etc/guacamolguacamole.properties with the ldap configurations in the file in this repository.
+4. Restart the Tomcat service
+   ```sh
+   systemctl restart tomcat
+   ```
+#### Setup Database for Connection Configurations (So we are not using LDAP to store configurations)
+1. Copy the JDBC authentication extension to /etc/guacamole/extensions
+   ```sh
+   cp /opt/guacamole-auth-jdbc-1.5.5/postgresql/guacamole-auth-jdbc-postgresql-1.5.5.jar /etc/guacamole/extensions/
+   ```
+2. Download the JDBC Driver and move it to /etc/guacamole/lib https://jdbc.postgresql.org/download/
+3. Install the database program
+   ```sh
+   apt install postgres
+   ```
+4. Install sudo so we can use the initial postgres user
+   ```sh
+   apt install sudo
+   ```
+5. Become the initial postgres user
+   ```sh
+   su postgres
+   ```
+6. Create the Database
+   ```sh
+   createdb guacamole_db
+   ```
+7. Setup the DB Schema
+   ```sh
+   cd /opt/guacamole-auth-jdbc-1.5.5/postgresql
+   cat schema/*.sql | psql -d guacamole_db -f -
+   ```
+8. Grant Guacamole Access to the DB
+   ```sh
+   psql -d guacamole_db
+   CREATE USER guacamole_user WITH PASSWORD 'some_password';
+   GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO guacamole_user;
+   GRANT SELECT,USAGE ON ALL SEQUENCES IN SCHEMA public TO guacamole_user;
+   \q
+   ```
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
