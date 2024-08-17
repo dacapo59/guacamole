@@ -345,7 +345,20 @@ cd /opt/guacamole-client-1.5.5/
 4. Get the Guacamole server a public certificate
 
 #### Setup OIDC
-1. 
+1. Copy the OIDC extenstion into /etc/gucamole/extensions
+   ```sh
+   cd /etc/opt/guacamole-auth-sso-1.5.5/openid
+   cp guacamole-auth-sso-openid-1.5.5.jar /etc/guacamole/extensions/
+   ```
+2. Register the application in Azure (save your work at all necessary steps)
+   - Login into https://entra.microsoft.com/
+   - Navigate to Identity > Applications > App Registrations
+   - Select "New Registration".
+   - Redirect URI will be https://internal.domain.com/guacamole
+   - Navigate to Certificates & Secrets and create a new client secret (copy the secret after creation).
+   - Navigate to Authentication, select "ID Tokens" under Implicit grant and hybrid flows.
+   - To get all necessary URLs for the next step, Navigate to Overview > Endpoints. Copy and paste the OpenID Connect metadata document URL into your browser. When you navigate to it, all needed information will be there - just ctrl + F.
+4. Update the /etc/guacamole/guacamole.properties configuration with the values in the file in this repository.
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
