@@ -147,7 +147,7 @@ rm *.gz
 3. Add JAVA_HOME path to your shell instance
    ```sh
    export JAVA_HOME=/opt/jdk-16.0.2
-#### Installation
+#### Installation of Dependencies
 
 1. Download and install Cairo (Required dependency)
    ```sh
@@ -214,8 +214,51 @@ rm *.gz
    ```sh
      sudo apt install libwebp-dev -y
    ```
-
-
+#### Building the Guacamole Server
+1. Change into the Guacamole server directory
+   ```sh
+   cd /opt/guacamole-server-1.5.5/
+   ```
+2. Configure the application with with installed dependencies
+   ```sh
+   ./configure --with-init-dir=/etc/init.d
+   ```
+3. Compile and Install Guacamole
+   ```sh
+   make && make install
+   ```
+4. Enable the guacd Service at Startup
+   ```sh
+   systemctl enable guacd
+   ```
+#### Building the Guacmole Client
+1. Change into the Guacamole client directory
+```sh
+cd /opt/guacamole-client-1.5.5/
+```
+2. Use Maven to Build the .war Guacamole Package
+   ```sh
+   mvn package
+   ```
+#### Deploy Guacamole
+1. Copy .war Guacamole Client Package to Tomcat Webapp Directory
+   ```sh
+   cp /opt/guacamole-client-1.5.5/guacamole/target/guacamole-1.5.5.war /opt/tomcat/webapps/guacamole.war
+   ```
+2. Make Working Directory and Files (user-mapping.xml is only used for initial testing of RDP)
+   ```sh
+   mkdir /etc/guacamole
+   mkdir /etc/guacamole/extensions
+   mkdir /etc/guacamole/lib
+   touch guacamole.properties
+   touch logback.xml
+   touch user-mapping.xml
+   ```
+4. Restart Applicable Services
+   ```sh
+   systemctl restart guacd
+   systemctl restart tomcat
+   ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
