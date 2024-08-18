@@ -91,7 +91,7 @@ This document provides a guide for setting up Keycloak to enable Single Sign-On 
 ### Built With
 
 * [![Guacamole][guacamole-image]][guacamole-url]
-* [![Tomcat][tomcat-image]][tomact-url]
+* [![Tomcat][tomcat-image]][tomcat-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
