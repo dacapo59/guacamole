@@ -90,7 +90,7 @@ This document provides a guide for setting up Keycloak to enable Single Sign-On 
 
 ### Built With
 
-* [![Keycloak][keycloak-image]][keycloak-url]
+* [![Guacamole][guacamole-image]][guacamole-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -473,6 +473,6 @@ Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo5
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
 [guacamole-url]: https://guacamole.apache.org/releases/1.5.5/
-[keycloak-image]: https://www.keycloak.org/resources/images/icon.svg
+[guacamole-image]: https://th.bing.com/th/id/OIP.4ZQ1nphj_0wTFBRZDH0ZwQHaGD?rs=1&pid=ImgDetMain
 [maxminddb-url]: https://www.maxmind.com/en/geoip-databases
 [maxminddb-image]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ042SY-Km30dCaPnBcuIw-5u2mZjNqX6NHQ&s
