@@ -91,6 +91,7 @@ This document provides a guide for setting up Keycloak to enable Single Sign-On 
 ### Built With
 
 * [![Guacamole][guacamole-image]][guacamole-url]
+* [![Tomcat][tomcat-image]][tomact-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -471,6 +472,8 @@ Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo5
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[JQuery-url]: https://jquery.com
 [guacamole-url]: https://guacamole.apache.org/releases/1.5.5/
 [guacamole-image]: https://th.bing.com/th/id/OIP.4ZQ1nphj_0wTFBRZDH0ZwQHaGD?rs=1&pid=ImgDetMain
+[tomcat-url]: https://tomcat.apache.org/tomcat-10.1-doc/index.html
+[tomcat-image]: https://tomcat.apache.org/tomcat-10.1-doc/images/tomcat.png
