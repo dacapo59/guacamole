@@ -482,4 +482,4 @@ Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo5
 [postgres-url]: https://www.postgresql.org/docs/
 [postgres-image]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUmnFYeOmmAlNV9_ZTu5cYgS2L55Q1pt9QyA&s
 [java-url]: https://docs.oracle.com/en/java/
-[java-image]: https://education.oracle.com/file/general/p-80-java.png
+[java-image]: https://media.licdn.com/dms/image/v2/C4E0BAQFX9tqZmIgI0w/company-logo_200_200/company-logo_200_200/0/1630608974950/javacommunity_logo?e=2147483647&v=beta&t=e65thVrspokNMYyQxl1ZvsQeJmzwlWA0_nu9zsoAvVc
