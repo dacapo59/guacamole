@@ -93,6 +93,7 @@ This document provides a guide for setting up Keycloak to enable Single Sign-On 
 * [![Guacamole][guacamole-image]][guacamole-url]
 * [![Tomcat][tomcat-image]][tomcat-url]
 * [![postgres][postgres-image]][postgres-url]
+* [![java][java-image]][java-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
