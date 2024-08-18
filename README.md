@@ -344,7 +344,7 @@ cd /opt/guacamole-client-1.5.5/
 3. Setup the reverse proxy with the congiguration file in this repository
 4. Get the Guacamole server a public certificate
 
-#### Setup OIDC
+#### Setup OIDC (Domain UPN Needs to match email domain when tieing in LDAP connections)
 1. Copy the OIDC extenstion into /etc/gucamole/extensions
    ```sh
    cd /etc/opt/guacamole-auth-sso-1.5.5/openid
