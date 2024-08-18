@@ -92,6 +92,7 @@ This document provides a guide for setting up Keycloak to enable Single Sign-On 
 
 * [![Guacamole][guacamole-image]][guacamole-url]
 * [![Tomcat][tomcat-image]][tomcat-url]
+* [![postgres][postgres-image]][postgres-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -477,3 +478,5 @@ Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo5
 [guacamole-image]: https://guacamole.apache.org/images/logos/guac-tricolor-logo.svg
 [tomcat-url]: https://tomcat.apache.org/tomcat-10.1-doc/index.html
 [tomcat-image]: https://tomcat.apache.org/tomcat-10.1-doc/images/tomcat.png
+[postgres-url]: https://www.postgresql.org/docs/
+[postgres-image]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUmnFYeOmmAlNV9_ZTu5cYgS2L55Q1pt9QyA&s
