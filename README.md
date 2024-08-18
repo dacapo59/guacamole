@@ -474,6 +474,6 @@ Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo5
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
 [guacamole-url]: https://guacamole.apache.org/releases/1.5.5/
-[guacamole-image]: https://th.bing.com/th/id/OIP.4ZQ1nphj_0wTFBRZDH0ZwQHaGD?rs=1&pid=ImgDetMain
+[guacamole-image]: https://guacamole.apache.org/images/logos/guac-tricolor-logo.svg
 [tomcat-url]: https://tomcat.apache.org/tomcat-10.1-doc/index.html
 [tomcat-image]: https://tomcat.apache.org/tomcat-10.1-doc/images/tomcat.png
