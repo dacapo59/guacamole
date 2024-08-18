@@ -480,3 +480,5 @@ Project Link: [https://github.com/dacapo59/guacamole](https://github.com/dacapo5
 [tomcat-image]: https://tomcat.apache.org/tomcat-10.1-doc/images/tomcat.png
 [postgres-url]: https://www.postgresql.org/docs/
 [postgres-image]: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUmnFYeOmmAlNV9_ZTu5cYgS2L55Q1pt9QyA&s
+[java-url]: https://docs.oracle.com/en/java/
+[java-image]: https://education.oracle.com/file/general/p-80-java.png
