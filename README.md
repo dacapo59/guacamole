@@ -131,6 +131,12 @@ cd /opt
 wget https://guacamole.apache.org/releases/1.5.5/...
 tar -zxvf filename
 ```
+* Download the JDBC Extensions
+```sh
+cd /opt
+wget https://guacamole.apache.org/releases/1.5.5/...
+tar -zxvf filename
+```
 * Download and extract Java 16 (Java 17 led to errors)
 ```sh
 cd /opt
