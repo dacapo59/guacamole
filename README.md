@@ -242,7 +242,11 @@ rm *.gz
    ```sh
    make && make install
    ```
-4. Enable the guacd Service at Startup
+4. Update the library cache
+   ```sh
+   ldconfig
+   ```
+5. Enable the guacd Service at Startup
    ```sh
    systemctl enable guacd
    ```
