@@ -149,11 +149,47 @@ sh -c 'echo "# Set JDK installation directory according to selected Java compile
 rm openjdk-16.0.2_linux-x64_bin.tar.gz
 ```
 * Download and install Tomcat
-  https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10 (Don't install default-jdk) (Tomcat 10 was not loading Guacamole without extra work - used Tomcat 9)
- * Delete all extracted files
-```sh
-rm *.gz
-```
+  ```sh
+  groupadd tomcat
+  useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+  apt install curl
+  curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz
+  mkdir /opt/tomcat
+  tar zxvf apache-tomcat-9.0.93.tar.gz -C /opt/tomcat --strip-components=1
+  cd /opt/tomcat
+  chgrp -R tomcat /opt/tomcat
+  chmod -R g+r conf
+  chmod g+x conf
+  chown -R tomcat webapps/ work/ temp/ logs/
+  sudo bash -c 'cat > /etc/systemd/system/tomcat.service <<EOF
+  [Unit]
+  Description=Apache Tomcat Web Application Container
+  After=network.target
+
+  [Service]
+  Type=forking
+
+  Environment=JAVA_HOME=/usr/lib/jvm/jdk-16.0.2/
+  Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+  Environment=CATALINA_HOME=/opt/tomcat
+  Environment=CATALINA_BASE=/opt/tomcat
+  Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+  Environment="JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+  ExecStart=/opt/tomcat/bin/startup.sh
+  ExecStop=/opt/tomcat/bin/shutdown.sh
+
+  User=tomcat
+  Group=tomcat
+  UMask=0007
+  RestartSec=10
+  Restart=always
+
+  [Install]
+  WantedBy=multi-user.target
+  EOF'
+  systemctl daemon-reload
+  systemctl start tomcat
+  systemctl enable tomcat
 ### Server Prep
 1. Statically assign NIC
 2. Comment out all ipv6 entries in /etc/hosts (rdp won't work without this step)
