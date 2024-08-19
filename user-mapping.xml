@@ -19,7 +19,7 @@
             <protocol>rdp</protocol>
             <param name="hostname">ipaddress</param>
         <!--    <param name="username">administrator</param> -->
-        <!--    <param name="domain">hostname.domain.tld</param> -->
+        <!--    <param name="domain">netbios</param> -->
         <!--    <param name="port">3389</param> -->
         <!--    <param name="password"></param> -->
 	<!--    <param name="security">any</param> -->
