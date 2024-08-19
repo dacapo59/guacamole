@@ -217,6 +217,11 @@ rm *.gz
    ```sh
      sudo apt install libwebp-dev -y
    ```
+17. Download and install ghostscript (For printer redirection support)
+    ```sh
+    sudo apt install ghostscript
+    ```
+
 #### Building the Guacamole Server
 1. Change into the Guacamole server directory
    ```sh
