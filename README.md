@@ -336,15 +336,15 @@ cd /opt/guacamole-client-1.5.5/
 2. Download the JDBC Driver and move it to /etc/guacamole/lib https://jdbc.postgresql.org/download/
 3. Install the database program
    ```sh
-   apt install postgres
+   apt install postgres -y
    ```
 4. Install sudo so we can use the initial postgres user
    ```sh
-   apt install sudo
+   apt install sudo -y
    ```
 5. Become the initial postgres user
    ```sh
-   su postgres
+   sudo su - postgres
    ```
 6. Create the Database
    ```sh
@@ -358,7 +358,7 @@ cd /opt/guacamole-client-1.5.5/
 8. Grant Guacamole Access to the DB
    ```sh
    psql -d guacamole_db
-   CREATE USER guacamole_user WITH PASSWORD 'some_password';
+   CREATE USER guacadmin WITH PASSWORD 'password';
    GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA public TO guacamole_user;
    GRANT SELECT,USAGE ON ALL SEQUENCES IN SCHEMA public TO guacamole_user;
    \q
