@@ -131,16 +131,15 @@ cd /opt
 wget https://guacamole.apache.org/releases/1.5.5/...
 tar -zxvf filename
 ```
-* Download and install Tomcat
-  https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10
-  
 * Download and extract Java 16 (Java 17 led to errors)
 ```sh
 cd /opt
 wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz
 tar -zxvf filename
 ```
-* Delete all extracted files
+* Download and install Tomcat
+  https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10 (Don't install default-jdk)
+ * Delete all extracted files
 ```sh
 rm *.gz
 ```
