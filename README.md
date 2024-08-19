@@ -276,7 +276,7 @@ cd /opt/guacamole-client-1.5.5/
    cp /opt/guacamole-auth-ldap-1.5.5/guacamole-1.5.5.war /etc/guacamole/extensions
    ``` 
 2. Create a service account in the LDAP server. The service account only needs to have "Domain Users" permissions.
-3. Update /etc/guacamolguacamole.properties with the ldap configurations in the file in this repository.
+3. Update /etc/guacamole/guacamole.properties with the ldap configurations in the file in this repository.
 4. Restart the Tomcat service
    ```sh
    systemctl restart tomcat
