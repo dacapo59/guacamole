@@ -1,0 +1,31 @@
+<user-mapping>
+
+    <!-- Per-user authentication and config information -->
+    <authorize username="USERNAME" password="PASSWORD">
+        <protocol>vnc</protocol>
+        <param name="hostname">localhost</param>
+        <param name="port">5900</param>
+        <param name="password">VNCPASS</param>
+    </authorize>
+
+    <!-- Another user, but using md5 to hash the password
+         (example below uses the md5 hash of "PASSWORD") -->
+    <authorize
+            username="name"
+            password="password">
+
+        <!-- First authorized connection -->
+        <connection name="Server 2022">
+            <protocol>rdp</protocol>
+            <param name="hostname">ipaddress</param>
+        <!--    <param name="username">administrator</param> -->
+        <!--    <param name="domain">hostname.domain.tld</param> -->
+        <!--    <param name="port">3389</param> -->
+        <!--    <param name="password"></param> -->
+	<!--    <param name="security">any</param> -->
+            <param name="ignore-cert">true</param>
+        </connection>
+
+    </authorize>
+
+</user-mapping>
