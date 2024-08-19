@@ -265,9 +265,9 @@ cd /opt/guacamole-client-1.5.5/
    mkdir /etc/guacamole
    mkdir /etc/guacamole/extensions
    mkdir /etc/guacamole/lib
-   touch guacamole.properties
-   touch logback.xml
-   touch user-mapping.xml
+   touch /etc/guacamole/guacamole.properties
+   touch /etc/guacamole/logback.xml
+   touch /etc/guacamole/user-mapping.xml
    ```
 3. Fill in the contents of the .xml files above with that of the files in this repository.
 4. Restart Applicable Services
