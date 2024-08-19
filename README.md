@@ -320,7 +320,7 @@ cd /opt/guacamole-client-1.5.5/
 #### Setup LDAP Authentication
 1. Copy the LDAP authentication extension to /etc/guacamole/extensions
    ```sh
-   cp /opt/guacamole-auth-ldap-1.5.5/guacamole-1.5.5.war /etc/guacamole/extensions
+   cp /opt/guacamole-auth-ldap-1.5.5/guacamole-auth-ldap-1.5.5.jar /etc/guacamole/extensions
    ``` 
 2. Create a service account in the LDAP server. The service account only needs to have "Domain Users" permissions.
 3. Update /etc/guacamole/guacamole.properties with the ldap configurations in the file in this repository.
