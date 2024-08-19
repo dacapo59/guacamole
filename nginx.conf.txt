@@ -1,0 +1,78 @@
+                # GeoIP2 Continent Map
+#               map $geoip2_data_continent_code $allowed_continent {
+#               default no;
+#               NA yes; # North America
+#               }
+
+
+                # GeoIP2 Country Map - Block all countries by default and allow the United States
+#               map $geoip2_data_country_iso_code $allowed_country {
+#               default no;
+#               FR yes; # France
+#               BE yes; # Belgium
+#               DE yes; # Germany
+#               CH yes; # Switzerland
+#               US yes; # United States
+#               }
+
+                # GeoIP2 State Map
+#               map $geoip2_data_state_code $allowed_state {
+#               default no;
+#               }
+
+server {
+  server_name     internal.domain.tld;
+
+  # Block forbidden country
+#  if ($allowed_country = "yes") {
+#    set $exclusions yes;
+#  }
+
+#  if ($exclusions = "no") {
+#    return 404;
+#  }
+
+  # Hash size
+  proxy_headers_hash_max_size 512;
+  proxy_headers_hash_bucket_size 128;
+
+  # Use HSTS
+  add_header Strict-Transport-Security "max-age=15768000" always;
+
+  # Logging
+#  access_log /var/log/nginx/internal.domain.tld.access.log;
+#  error_log /var/log/nginx/internal.domain.tld.error.log;
+
+  # Rate limit connection requests
+  # limit_req zone=STANDARD burst=5;
+
+  # Add CSP Content
+  add_header Content-Security-Policy "frame-src 'self';";
+
+  # Do not allow click-jacking
+  add_header X-Frame-Options "SAMEORIGIN";
+
+  # Do not allow XSS
+  add_header X-XSS-Protection "1; mode=block";
+
+ Redirect to Guacamole
+  location / {
+    return 302 /guacamole;
+  }
+
+  location /guacamole/ {
+    proxy_pass http://ipaddress:8080;
+
+
+                # proxy settings
+               proxy_buffering off;
+               proxy_set_header X-Forwarded-For $proxy_protocol_addr;
+               proxy_set_header X-Forwarded-Proto $scheme;
+               proxy_set_header X-Forwarded-Host $host;
+               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+               proxy_set_header Upgrade $http_upgrade;
+               proxy_set_header Connection $http_connection;
+               proxy_cookie_path /guacamole/ /;
+
+  }
+}
