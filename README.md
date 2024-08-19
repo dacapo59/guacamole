@@ -369,7 +369,7 @@ cd /opt/guacamole-client-1.5.5/
    systemctl restart tomcat
    ```
 11. Create an user that will be used as a Guacamole administration account in LDAP, login as guacadmin and give the new admin user all admin permissions.
-12. Login as the new admin, change the guacadmin password, and disable login for guacadmin.
+12. Login as the new admin, remove all admin permissions from guacadmin, change the guacadmin password, and disable login for guacadmin.
 #### Setup Reverse Proxy
 1. Add the line, URIEncoding="UTF-8", to the connector configuration of Tomcat
    ```sh
