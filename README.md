@@ -149,7 +149,7 @@ sh -c 'echo "# Set JDK installation directory according to selected Java compile
 rm openjdk-16.0.2_linux-x64_bin.tar.gz
 ```
 * Download and install Tomcat
-  https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10 (Don't install default-jdk)
+  https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10 (Don't install default-jdk) (Tomcat 10 was not loading Guacamole without extra work - used Tomcat 9)
  * Delete all extracted files
 ```sh
 rm *.gz
