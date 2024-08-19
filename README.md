@@ -139,10 +139,14 @@ tar -zxvf filename
 ```
 * Download and extract Java 16 (Java 17 led to errors)
 ```sh
+apt install default-jdk
+apt remove default-jdk
 cd /opt
 wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz
 tar -zxvf openjdk-16.0.2_linux-x64_bin.tar.gz
+mv /opt/jdk-16.0.2/ /usr/lib/jvm/
 sh -c 'echo "# Set JDK installation directory according to selected Java compiler\n\nexport JAVA_HOME=/usr/lib/jvm/jdk-16.0.2/\n\nexport export PATH=$JAVA_HOME/bin:$PATH" > /etc/profile.d/java_home.sh'
+rm openjdk-16.0.2_linux-x64_bin.tar.gz
 ```
 * Download and install Tomcat
   https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-9-on-debian-10 (Don't install default-jdk)
@@ -153,9 +157,6 @@ rm *.gz
 ### Server Prep
 1. Statically assign NIC
 2. Comment out all ipv6 entries in /etc/hosts (rdp won't work without this step)
-3. Add JAVA_HOME path to your shell instance
-   ```sh
-   export JAVA_HOME=/opt/jdk-16.0.2
 #### Installation of Dependencies
 
 1. Download and install Cairo (Required dependency)
