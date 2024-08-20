@@ -84,7 +84,7 @@
 
 <!-- [![Product Name0 Screen Shot][product-screenshot]](https://example.com) -->
 
-This document provides a guide for setting up Keycloak to enable Single Sign-On (SSO) within your organization. It outlines the steps required to configure Keycloak as your centralized identity provider, allowing users to authenticate once and gain access to multiple applications and services seamlessly. The guide covers the installation and initial configuration of Keycloak, the creation and management of realms, the integration of client applications with SSO capabilities, and the setup of authentication protocols such as OAuth 2.0 and OpenID Connect. By following this document, you will establish a robust SSO environment that enhances user convenience and security across your network.
+This document provides a guide for building a Guacamole system that integrates LDAP for user authentication, PostgreSQL for storing connection information, and Microsoft 365 as an Identity Provider (IdP) for SSO. Apache Guacamole is a clientless remote desktop gateway that supports standard protocols like VNC, RDP, and SSH. It enables users to access remote systems via a web browser.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
